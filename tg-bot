@@ -1,0 +1,209 @@
+import telebot
+from requests import get
+
+bot = telebot.TeleBot("5887590351:AAFMeXMe6kVrvzUQhT0HUbivigKh1nN1AZQ")
+
+
+@bot.message_handler(commands=["start"])
+def start_command(message):
+    bot.send_message(
+        message.chat.id,
+        "Welcome!\n" +
+        "This bot is about anime. There are several genres of anime in it. Some commands will have a delay of 10-15 seconds.\n" +
+        "To get help press /help.")
+
+
+@bot.message_handler(commands=["help"])
+def help_command(message):
+    bot.send_message(
+        message.chat.id,
+        "All commands of the bot:\n" +
+        "/start \n" +
+        "/description \n" +
+        "/AnimeAdventures1 \n" +
+        "/AnimeAdventures2 \n" +
+        "/AnimeAdventures3 \n" +
+        "/AnimeComedy1 \n" +
+        "/AnimeComedy2 \n" +
+        "/AnimeComedy3 \n" +
+        "/AnimeEverydaylife \n" +
+        "/AnimeDrama \n" +
+        "/AnimeFantasy1 \n" +
+        "/AnimeFantasy2 \n" +
+        "/AnimeFantasy3 \n" +
+        "/AnimeDetective1 \n" +
+        "/AnimeDetective2 \n" +
+        "/AnimeDetective3 \n" +
+        "/Neko1 \n" +
+        "/Neko2 \n" +
+        "/Neko3 \n")
+
+
+@bot.message_handler(commands=["description"])
+def description_command(message):
+    bot.send_message(
+        message.chat.id,
+        "start - Greeting \n" +
+        "help - List of commands \n" +
+        "AnimeAdventures - Anime with the adventure genre \n" +
+        "AnimeComedy - Anime with the comedy genre \n" +
+        "AnimeEverydaylife - Anime with the genre everyday life \n" +
+        "AnimeDrama - Anime with the drama genre \n" +
+        "AnimeFantasy - Anime with the fantasy genre \n" +
+        "AnimeDetective - Anime with the detective genre \n" +
+        "Neko - A picture with a cat girl \n")
+
+
+@bot.message_handler(commands=["AnimeAdventures1"])
+def AnimeAdventures_command(message):
+    bot.send_message(
+        message.chat.id,
+        "Anime Website: https://jut.su/boku-hero-academia/ \n" +
+        "Title: My Hero Academy.")
+    bot.send_photo(message.chat.id, get(
+        "https://img5.goodfon.ru/wallpaper/nbig/d/9f/moia-geroiskaia-akademiia-my-hero-academia-boku-no-hero-a-36.jpg").content)
+
+
+@bot.message_handler(commands=["AnimeAdventures2"])
+def AnimeAdventures_command(message):
+    bot.send_message(
+        message.chat.id,
+        "Anime Website: https://jut.su/jojo-bizarre-adventure/ \n" +
+        "Title: The incredible adventures of Jojo.")
+    bot.send_photo(message.chat.id, get(
+        "https://loginportal.funnyjunk.com/pictures/Jojos+bizarre+facts+just+in+time+on+a+friday+saturday_010546_5482613.jpg").content)
+
+
+@bot.message_handler(commands=["AnimeAdventures3"])
+def AnimeAdventures_command(message):
+    bot.send_message(
+        message.chat.id,
+        "Anime Website: https://jut.su/kancolle/ \n" +
+        "Title: Naval Collection.")
+    bot.send_photo(message.chat.id, get("https://i.imgur.com/BHkbAKr.jpg").content)
+
+
+@bot.message_handler(commands=["AnimeComedy1"])
+def AnimeComedy_command(message):
+    bot.send_message(
+        message.chat.id,
+        "Anime Website: https://jut.su/danshi-koukousei-no-nichijou/ \n" +
+        "Title: Everyday life of high school students.")
+    bot.send_photo(message.chat.id, get("https://wallpapercave.com/wp/wp9489484.jpg").content)
+
+
+@bot.message_handler(commands=["AnimeComedy2"])
+def AnimeComedy_command(message):
+    bot.send_message(
+        message.chat.id,
+        "Anime Website: https://jut.su/osananajimi-ga-zettai/ \n" +
+        "Title: A romantic comedy where a childhood friend will not lose.")
+    bot.send_photo(message.chat.id, get("https://wallpapercave.com/wp/wp9448765.jpg").content)
+
+
+@bot.message_handler(commands=["AnimeComedy3"])
+def AnimeComedy_command(message):
+    bot.send_message(
+        message.chat.id,
+        "Anime Website: https://jut.su/kiniro-mosaic/ \n" +
+        "Title: Golden Mosaic.")
+    bot.send_photo(message.chat.id,
+                   get("https://media.kg-portal.ru/anime/k/kiniromosaic2/production/kiniromosaic2_1.jpg").content)
+
+
+@bot.message_handler(commands=["AnimeEverydaylife"])
+def AnimeEverydaylife_command(message):
+    bot.send_message(
+        message.chat.id,
+        "Anime Website: https://jut.su/inou-battle-wa-nichijou-kei/ \n" +
+        "Title: Super fights in everyday life.")
+    bot.send_photo(message.chat.id, get(
+        "https://media.kg-portal.ru/anime/i/inoubattlewanichijkeinonakade/production/inoubattlewanichijkeinonakade_5.jpg").content)
+
+
+@bot.message_handler(commands=["AnimeDrama"])
+def AnimeDrama_command(message):
+    bot.send_message(
+        message.chat.id,
+        "Anime Website: https://jut.su/dramatical-murder/ \n" +
+        "Title: Dramatic murder.")
+    bot.send_photo(message.chat.id, get("https://i.ebayimg.com/images/g/XgoAAOSwCU1Yx1UO/s-l500.jpg").content)
+
+
+@bot.message_handler(commands=["AnimeFantasy1"])
+def AnimeFantasy_command(message):
+    bot.send_message(
+        message.chat.id,
+        "Anime Website: https://jut.su/mondaiji-tachi/ \n" +
+        "Title: Indigo Children from another World.")
+    bot.send_photo(message.chat.id,
+                   get("https://i.pinimg.com/originals/b1/02/37/b10237a6dc10e021b0857f717e3b7b40.jpg").content)
+
+
+@bot.message_handler(commands=["AnimeFantasy2"])
+def AnimeFantasy_command(message):
+    bot.send_message(
+        message.chat.id,
+        "Anime Website: https://jut.su/shironeko/ \n" +
+        "Title: The White Cat Project.")
+    bot.send_photo(message.chat.id,
+                   get("https://media.kg-portal.ru/anime/s/shironekoproject/production/shironekoproject_2.jpg").content)
+
+
+@bot.message_handler(commands=["AnimeFantasy3"])
+def AnimeFantasy_command(message):
+    bot.send_message(
+        message.chat.id,
+        "Anime Website: https://jut.su/air/ \n" +
+        "Title: High.")
+    bot.send_photo(message.chat.id,
+                   get("https://mobimg.b-cdn.net/v3/fetch/4f/4fbf706a8ea8c739357f99e293f33e03.jpeg").content)
+
+
+@bot.message_handler(commands=["AnimeDetective1"])
+def AnimeDetective_command(message):
+    bot.send_message(
+        message.chat.id,
+        "Anime Website: https://jut.su/fugou-keiji/ \n" +
+        "Title: A rich detective. Balance: Unlimited.")
+    bot.send_photo(message.chat.id, get(
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlKUcNyl3DS48oH5eiFg2JsdiTVu-LjCgTDlMpzripkxvizt617PwpqdCKG8YFJxtTPhpZwtTU1rmt5PpSuXKZy9gm_NwNtVGzGJm9lQ5VfVuT4hby6PmLyjeKfLR0x4V8Jiynq33ejyBrxXsaQH3hAyhlIewATzYnShKADQxOwCeWsz0WrWqSW4jk/s1600/398e2ac90a2f8747c7e6ac09aef790ce.png").content)
+
+
+@bot.message_handler(commands=["AnimeDetective2"])
+def AnimeDetective_command(message):
+    bot.send_message(
+        message.chat.id,
+        "Anime Website: https://jut.su/hamatora-anima/ \n" +
+        "Title: Hamator Detective Agency.")
+    bot.send_photo(message.chat.id, get("https://trikky.ru/kavaj/files/2019/01/s592.jpg").content)
+
+
+@bot.message_handler(commands=["AnimeDetective3"])
+def AnimeDetective_command(message):
+    bot.send_message(
+        message.chat.id,
+        "Anime Website: https://jut.su/babylon/ \n" +
+        "Title: Babylon.")
+    bot.send_photo(message.chat.id, get("https://media.kg-portal.ru/anime/b/babylon/production/babylon_1.jpg").content)
+
+
+@bot.message_handler(commands=["Neko1"])
+def Neko_command(message):
+    bot.send_photo(message.chat.id,
+                   get("https://ru.myanimeshelf.com/upload/dynamic/2016-09/19/_V5cF98AXzU1.jpg").content)
+
+
+@bot.message_handler(commands=["Neko2"])
+def Neko_command(message):
+    bot.send_photo(message.chat.id, get(
+        "https://sun9-39.userapi.com/impg/ODmSFVgVt-8Y644LDmu5gwWEoiNcZ010k_arHw/_nmLxTaNlb4.jpg?size=1280x931&quality=96&sign=6e9c542c8b0cb7a634b7162597023909&c_uniq_tag=lpb03U1fwRApbkF2T8HjdiVbx65ucfwklVE6xRTB7zA&type=album").content)
+
+
+@bot.message_handler(commands=["Neko3"])
+def Neko_command(message):
+    bot.send_photo(message.chat.id, get(
+        "https://kartinkin.net/uploads/posts/2021-02/1612332200_35-p-anime-devochki-neko-art-kartinki-36.jpg").content)
+
+
+bot.infinity_polling()
