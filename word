@@ -1,8 +1,8 @@
-word = str(input())
+word = str(input()) #Ввод слова
 
 a = word[::-1]
 
 if word == a:
-    print("True")
+    print("True") #это слово является палиндромом
 else:
-    print("False")
+    print("False") #это слово не является палиндромом
