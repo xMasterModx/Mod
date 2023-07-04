@@ -1,0 +1,36 @@
+#в файле views.py
+from django.shortcuts import render
+from django.http import HttpResponse
+
+def index(requests):
+    return HttpResponse("Домашка по 4 занятию")
+
+#в файле app_lesson_4\urls.py, который создали сами
+from django.urls import path
+from .views import index
+
+urlpatterns = [
+    path("", index)
+]
+
+#в файле my_first_django\urls.py, который был уже создан (не нами, а самой программой)
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", include("app_lesson_4.urls"))
+]
+
+#в файле my_first_django\settings.py
+#ищем вот этот список и добавляем название
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    "app_lesson_4", #сюда добавили название проекта
+]
+
